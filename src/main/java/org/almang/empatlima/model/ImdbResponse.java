@@ -28,6 +28,9 @@ public class ImdbResponse {
     @JsonProperty(value = "Actors")
     private String actors = Constant.EMPTY_STRING;
 
+    @JsonProperty(value = "Country")
+    private String countryOfOrigin = Constant.EMPTY_STRING;
+
     private String imdbRating = Constant.EMPTY_STRING;
 
     private String tomatoRating = Constant.EMPTY_STRING;
@@ -47,6 +50,10 @@ public class ImdbResponse {
 
     public String getActors() {
         return actors;
+    }
+
+    public String getCountryOfOrigin() {
+        return countryOfOrigin;
     }
 
     public String getDirector() {
@@ -91,6 +98,10 @@ public class ImdbResponse {
 
     public void setActors(String actors) {
         this.actors = actors;
+    }
+
+    public void setCountryOfOrigin(String countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
     public void setDirector(String director) {
@@ -145,6 +156,7 @@ public class ImdbResponse {
                 ", genre='" + genre + '\'' +
                 ", director='" + director + '\'' +
                 ", actors='" + actors + '\'' +
+                ", countryOfOrigin='" + countryOfOrigin + '\'' +
                 ", imdbRating='" + imdbRating + '\'' +
                 ", imdbId='" + imdbId + '\'' +
                 ", type='" + type + '\'' +

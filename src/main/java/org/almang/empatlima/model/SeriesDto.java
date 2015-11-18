@@ -5,59 +5,143 @@ package org.almang.empatlima.model;
  */
 public class SeriesDto {
 
-    private String seriesTitle;
+    private String title;
 
-    private String seriesOrigin;
+    private String origin;
 
-    private String seriesTotalSize;
+    private String year;
 
-    private String seriesTotalSeason;
+    private String runtime;
 
-    private String seriesAverageSizePerSeason;
+    private String imdbRating;
 
-    public String getSeriesAverageSizePerSeason() {
-        return seriesAverageSizePerSeason;
+    private String genre;
+
+    private String actors;
+
+    private String totalSize;
+
+    private String totalSeason;
+
+    private String averageSizePerSeason;
+
+    private String averageEpisodePerSeason;
+
+    private String imdbId;
+
+    public String getActors() {
+        return actors;
     }
 
-    public String getSeriesOrigin() {
-        return seriesOrigin;
+    public String getAverageEpisodePerSeason() {
+        return averageEpisodePerSeason;
     }
 
-    public String getSeriesTitle() {
-        return seriesTitle;
+    public String getAverageSizePerSeason() {
+        return averageSizePerSeason;
     }
 
-    public String getSeriesTotalSeason() {
-        return seriesTotalSeason;
+    public String getGenre() {
+        return genre;
     }
 
-    public String getSeriesTotalSize() {
-        return seriesTotalSize;
+    public String getImdbId() {
+        return imdbId;
     }
 
-    public void setSeriesAverageSizePerSeason(String seriesAverageSizePerSeason) {
-        this.seriesAverageSizePerSeason = seriesAverageSizePerSeason;
+    public String getImdbRating() {
+        return imdbRating;
     }
 
-    public void setSeriesOrigin(String seriesOrigin) {
-        this.seriesOrigin = seriesOrigin;
+    public String getOrigin() {
+        return origin;
     }
 
-    public void setSeriesTitle(String seriesTitle) {
-        this.seriesTitle = seriesTitle;
+    public String getRuntime() {
+        return runtime;
     }
 
-    public void setSeriesTotalSeason(String seriesTotalSeason) {
-        this.seriesTotalSeason = seriesTotalSeason;
+    public String getTitle() {
+        return title;
     }
 
-    public void setSeriesTotalSize(String seriesTotalSize) {
-        this.seriesTotalSize = seriesTotalSize;
+    public String getTotalSeason() {
+        return totalSeason;
+    }
+
+    public String getTotalSize() {
+        return totalSize;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setActors(String actors) {
+        this.actors = actors;
+    }
+
+    public void setAverageEpisodePerSeason(String averageEpisodePerSeason) {
+        this.averageEpisodePerSeason = averageEpisodePerSeason;
+    }
+
+    public void setAverageSizePerSeason(String averageSizePerSeason) {
+        this.averageSizePerSeason = averageSizePerSeason;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setImdbId(String imdbId) {
+        this.imdbId = Constant.IMDB_LINK + imdbId;
+    }
+
+    public void setImdbRating(String imdbRating) {
+        this.imdbRating = imdbRating;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setTotalSeason(String totalSeason) {
+        this.totalSeason = totalSeason;
+    }
+
+    public void setTotalSize(String totalSize) {
+        this.totalSize = totalSize;
+    }
+
+    public void setYear(String year) {
+        if (year.endsWith("–")) {
+            this.year = year + "ongoing";
+        } else {
+            this.year = year;
+        }
     }
 
     @Override
     public String toString() {
-        return seriesTitle + Constant.TAB + seriesOrigin + Constant.TAB + seriesTotalSeason +
-                Constant.TAB + seriesTotalSize + Constant.TAB + seriesAverageSizePerSeason;
+        return title + Constant.TAB +
+                year + Constant.TAB +
+                origin + Constant.TAB +
+                imdbRating + Constant.TAB +
+                runtime + Constant.TAB +
+                genre + Constant.TAB +
+                actors + Constant.TAB +
+                totalSeason + Constant.TAB +
+                totalSize + Constant.TAB +
+                averageSizePerSeason + Constant.TAB +
+                averageEpisodePerSeason + Constant.TAB +
+                imdbId;
     }
 }
