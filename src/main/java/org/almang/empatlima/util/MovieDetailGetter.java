@@ -8,7 +8,6 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.almang.empatlima.model.Constant;
@@ -81,8 +80,6 @@ public class MovieDetailGetter {
                 return MapperUtil.getObjectMapper(true).readValue(output, ImdbResponse.class);
             }
 
-        } catch (MalformedURLException e) {
-            System.out.println(e.getMessage() + Constant.PIPE + e.toString());
         } catch (IOException e) {
             System.out.println(e.getMessage() + Constant.PIPE + e.toString());
         }
@@ -192,7 +189,7 @@ public class MovieDetailGetter {
     private String checkMovieQuality(String pathName) {
         File dir = new File(pathName);
 
-        if (dir.isDirectory() == false) {
+        if (!dir.isDirectory()) {
             System.out.println("Directory does not exists : " + pathName);
             return Constant.EMPTY_STRING;
         }
@@ -211,7 +208,7 @@ public class MovieDetailGetter {
 
         File dir = new File(pathName);
 
-        if (dir.isDirectory() == false) {
+        if (!dir.isDirectory()) {
             System.out.println("Directory does not exists : " + pathName);
             return false;
         }
