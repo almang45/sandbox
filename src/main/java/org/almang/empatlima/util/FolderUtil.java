@@ -12,20 +12,20 @@ import org.apache.commons.io.FileUtils;
  */
 public class FolderUtil {
 
-    public static String[] units = new String[] {"B", "KB", "MB", "GB", "TB"};
-
     public static String calculateAverageSizePerSeason(File source, int totalSeason) {
         long size = FileUtils.sizeOfDirectory(source) / totalSeason;
         int unitIndex = (int) (Math.log10(size) / 3);
         double unitValue = 1 << (unitIndex * 10);
-        return new DecimalFormat("#,##0.#").format(size / unitValue) + " " + units[unitIndex];
+        return new DecimalFormat("#,##0.#").format(size / unitValue) + " " +
+                Constant.units[unitIndex];
     }
 
     public static String calculateFolderSizeString(File source) {
         long size = FileUtils.sizeOfDirectory(source);
         int unitIndex = (int) (Math.log10(size) / 3);
         double unitValue = 1 << (unitIndex * 10);
-        return new DecimalFormat("#,##0.#").format(size / unitValue) + " " + units[unitIndex];
+        return new DecimalFormat("#,##0.#").format(size / unitValue) + " " +
+                Constant.units[unitIndex];
     }
 
     public static boolean checkSubtitlesFiles(String pathName) {

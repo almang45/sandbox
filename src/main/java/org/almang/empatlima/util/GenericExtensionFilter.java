@@ -14,7 +14,8 @@ public class GenericExtensionFilter implements FilenameFilter {
         this.ext = ext;
     }
 
+    @Override
     public boolean accept(File dir, String name) {
-        return (name.endsWith(ext));
+        return name.endsWith(ext);
     }
 }

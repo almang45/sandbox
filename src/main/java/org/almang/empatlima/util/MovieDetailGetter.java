@@ -13,6 +13,9 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class MovieDetailGetter {
 
+    public MovieDetailGetter() {
+    }
+
     public static void main(String[] args) throws Exception {
 
         String movieTitle;
@@ -34,6 +37,7 @@ public class MovieDetailGetter {
         FileOutputStream out = new FileOutputStream(fileDir + "movie-list.txt");
 
         File[] subDirs = dir.listFiles(new FileFilter() {
+            @Override
             public boolean accept(File pathname) {
                 return pathname.isDirectory();
             }

@@ -15,6 +15,9 @@ import org.almang.empatlima.model.SeriesDto;
  */
 public class SeriesDetailGetter {
 
+    public SeriesDetailGetter() {
+    }
+
     public static void main(String[] args) throws IOException {
 
         SeriesDto series = new SeriesDto();
@@ -30,6 +33,7 @@ public class SeriesDetailGetter {
         FileOutputStream out = new FileOutputStream(fileDir + "series-list.txt");
 
         File[] subDirs = dir.listFiles(new FileFilter() {
+            @Override
             public boolean accept(File pathname) {
                 return pathname.isDirectory();
             }

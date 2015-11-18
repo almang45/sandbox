@@ -64,7 +64,7 @@ public class ImdbUtil {
                 throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
 
-            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
             String output;
             if ((output = br.readLine()) != null) {

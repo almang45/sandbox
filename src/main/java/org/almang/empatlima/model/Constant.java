@@ -17,6 +17,8 @@ public class Constant {
     public static final String IMDB_ID = "type";
     public static final String IMDB_LINK = "http://www.imdb.com/title/";
 
+    public static final String[] units = new String[] {"B", "KB", "MB", "GB", "TB"};
+
     public static final String SRT_EXT = ".srt";
     public static final String[] FILM_EXTS = {"mp4", "mkv", "avi"};
 
